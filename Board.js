@@ -54,7 +54,9 @@ class Board{
 
 	show(){
 		for (let i=0;i<this.dimension*this.dimension;i++){
-			this.cells[i].show();
+			let over=i%this.dimension;
+			let down=int(i/this.dimension);
+			this.cells[i].show(over, down);
 		}
 	}
 }
