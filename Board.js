@@ -29,11 +29,11 @@ class Board{
 		//console.log(down);
 		// Get horizontal
 		for (let i=0; i<this.dimension; i++){
-			cell=this.getCellByLabel((over+i)%this.dimension,down);
+			//cell=this.getCellByLabel((over+i)%this.dimension,down);
 			//console.log(cell);
-			cell.activate("")
-			cell=this.getCellByLabel(over,(down+i)%this.dimension);
-			cell.activate("")
+			//cell.activate("")
+			//cell=this.getCellByLabel(over,(down+i)%this.dimension);
+			//cell.activate("")
 			cell=this.getCellByLabel((over+i)%this.dimension,(down+i)%this.dimension);
 			cell.activate("")
 			if (over-i<0){
