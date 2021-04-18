@@ -51,12 +51,43 @@ class Board{
 		cell.activate(text);
 
 	}
+	score(){
+		console.log("Horizontal left");
+		let cell, score,status;
+		score=0;
+
+		for (let i=0; i<self.dimension;i++){
+			status=0;
+			for (let j=0; j<self.dimension;j++){
+				cell=this.getCellByLabel(j,i);
+				if (!cell.activated){
+					status=1
+				}
+
+			}
+			score+=status;
+		}
+		console.log(score);
+	}
 
 	show(){
+		let over, down, done, dtwo;
 		for (let i=0;i<this.dimension*this.dimension;i++){
-			let over=i%this.dimension;
-			let down=int(i/this.dimension);
-			this.cells[i].show(over, down);
+			over=int(i%this.dimension);
+			down=int(i/this.dimension);
+			if (down-over<0){
+				done=int(down-over+this.dimension);
+			}
+			else{
+				done=int(down-over);
+			}	
+			if (down+over>=this.dimension){
+				dtwo=int(down+over-this.dimension);
+			}
+			else{
+				dtwo=int(down+over);
+			}	
+			this.cells[i].show(over, down, done, dtwo);
 		}
 	}
 }

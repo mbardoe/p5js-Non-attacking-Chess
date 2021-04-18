@@ -16,7 +16,8 @@ class Cell{
 		this.activated=false;
 	}
 
-	show(i,j){
+	show(i,j,done,dtwo){
+		//console.log(done);
 		strokeWeight(4);
 		stroke(255);
 		if (this.activated){
@@ -33,7 +34,9 @@ class Cell{
 		textAlign(CENTER);
 		text(str(i),this.position.x+9, this.position.y+9)
 		text(str(j),this.position.x-9+this.size, this.position.y+9)
-		text(str(abs(i-j)), this.position.x+9, this.position.y-9+this.size)
+		
+		text(str(done), this.position.x+9, this.position.y-9+this.size)
+		text(str(dtwo), this.position.x-9+this.size, this.position.y-9+this.size)
 		if (this.activated){
 			fill(0);
 			textSize(10);
