@@ -5,7 +5,7 @@ let count=1;
 function setup() {
 	createCanvas(600,600);
 	cell=new Cell(0,0,50);
-	board=new Board(600,10);
+	board=new Board(600, 10);
 	background(0);
 	//board.show();
 }

@@ -32,7 +32,8 @@ class Cell{
 			fill(0);
 			textSize(10);
 			textAlign(CENTER);
-			text(this.text, this.position.x+this.size/2, this.position.y+this.size/2);
+			text(this.text, this.position.x+this.size/2, 
+				this.position.y+this.size/2);
 		}
 	}
 }

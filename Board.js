@@ -1,7 +1,8 @@
 
 class Board{
 
-	constructor(width,n){
+	constructor(width, n){
+		//this.offset=u;
 		this.dimension=n;
 		this.cellSize=int(width/n);
 		this.cells=[];
@@ -11,6 +12,7 @@ class Board{
 				this.cells.push(newCell);
 			}
 		}
+		//console.log(u);
 	}
 
 	getCellByLabel(i, j){
