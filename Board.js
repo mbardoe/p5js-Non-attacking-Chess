@@ -56,11 +56,75 @@ class Board{
 		let cell, score,status;
 		score=0;
 
-		for (let i=0; i<self.dimension;i++){
+		for (let i=0; i<this.dimension;i++){
 			status=0;
-			for (let j=0; j<self.dimension;j++){
-				cell=this.getCellByLabel(j,i);
-				if (!cell.activated){
+			for (let j=0; j<this.dimension;j++){
+				cell=this.getCellByLabel(int(j),int(i));
+				//console.log(cell);
+				if (cell.activated==false){
+					//print("Yes");
+					status=1
+				}
+
+			}
+			score+=status;
+		}
+		console.log(score);
+		console.log("Vertical left");
+		score=0;
+
+		for (let i=0; i<this.dimension;i++){
+			status=0;
+			for (let j=0; j<this.dimension;j++){
+				cell=this.getCellByLabel(int(i),int(j));
+				//console.log(cell);
+				if (cell.activated==false){
+					//print("Yes");
+					status=1
+				}
+
+			}
+			score+=status;
+		}
+		console.log(score);
+		console.log("Done left");
+		score=0;
+		let down; 
+		for (let i=0; i<this.dimension;i++){
+			status=0;
+			for (let j=0; j<this.dimension;j++){
+				down=i+j;
+				if (int(down)>=this.dimension){
+					down=int(down-this.dimension);
+				}
+				
+
+				cell=this.getCellByLabel(int(j),int(down));
+				//console.log(cell);
+				if (cell.activated==false){
+					print("done active:"+str(i))
+					status=1
+				}
+
+			}
+			score+=status;
+		}
+		console.log(score);
+		console.log("Dtwo left");
+		score=0;
+		
+		for (let i=0; i<this.dimension;i++){
+			status=0;
+			for (let j=0; j<this.dimension;j++){
+				down=j-i;
+				if (int(down)<0){
+					down=int(down+this.dimension);
+				}
+				//console.log(down);
+				cell=this.getCellByLabel(int(j),int(down));
+				//console.log(cell);
+				if (cell.activated==false){
+					//print("Yes");
 					status=1
 				}
 
